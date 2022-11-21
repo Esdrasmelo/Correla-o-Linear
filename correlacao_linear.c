@@ -12,13 +12,20 @@ double calculate_Y_Equation_Value(double X_Value, double A_Value, double B_Value
 int main(void)
 {
 	int numberOfInputs = 0, index = 0;
+	int needToFindSpecificNumber = 0;
 	double specific_number = 0;
 
 	printf("\nDigite a quantidade de numeros que serão digitados: ");
 	scanf("%d", &numberOfInputs);
 
-	printf("\nSe há algum valor específico a ser encontrado, digite o valor de X que foi passado pra você ou tecle ENTER caso não seja necessário encontrar um valor específico: ");
-	scanf("%lf", &specific_number);
+	printf("\nSe há algum valor específico a ser encontrado, digite 1 ou digite 0 caso nenhum valor específico precise ser calculado: ");
+	scanf("%d", &needToFindSpecificNumber);
+
+	if (needToFindSpecificNumber)
+	{
+		printf("\nDigite o valor de X para que o valor da Equação de Reta possa ser encontrado: ");
+		scanf("%lf", &specific_number);
+	}
 
 	double inputNumber = 0, y_Numbers[numberOfInputs], x_Numbers[numberOfInputs], sumOf_Y_Numbers = 0, sumOf_X_Numbers = 0, sumOf_X_PowNumbers = 0, sumOf_Y_PowNumbers = 0, sumOf_XY_Numbers = 0;
 
@@ -47,7 +54,6 @@ int main(void)
 	double R_Value = calculate_R_Value(numberOfInputs, sumOf_XY_Numbers, sumOf_X_Numbers, sumOf_Y_Numbers, sumOf_X_PowNumbers, sumOf_Y_PowNumbers);
 	double A_Value = calculate_A_Value(numberOfInputs, sumOf_XY_Numbers, sumOf_X_Numbers, sumOf_Y_Numbers, sumOf_X_PowNumbers);
 	double B_Value = calculate_B_Value(numberOfInputs, sumOf_X_Numbers, sumOf_Y_Numbers, A_Value);
-	double Y_Equation_Value = calculate_Y_Equation_Value(specific_number, A_Value, B_Value);
 
 	printf("\n\n=== SOMATORIA DE X: %.2lf", sumOf_X_Numbers);
 	printf("\n=== SOMATORIA DE Y: %.2lf", sumOf_Y_Numbers);
@@ -66,7 +72,13 @@ int main(void)
 
 	printf("\n=== VALOR DE A: %lf", A_Value);
 	printf("\n=== VALOR DE B: %lf", B_Value);
-	printf("\n=== VALOR DA EQUAÇÃO DA RETA: %lf\n", Y_Equation_Value);
+
+	if (needToFindSpecificNumber)
+	{
+
+		double Y_Equation_Value = calculate_Y_Equation_Value(specific_number, A_Value, B_Value);
+		printf("\n=== VALOR DA EQUAÇÃO DA RETA: %lf\n", Y_Equation_Value);
+	}
 
 	return 0;
 }
