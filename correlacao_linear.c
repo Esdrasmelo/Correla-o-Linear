@@ -15,15 +15,15 @@ int main(void)
 	int needToFindSpecificValue = 0;
 	double specific_value = 0;
 
-	printf("\nDigite a quantidade de numeros que ser„o digitados: ");
+	printf("\nDigite a quantidade de numeros que ser√£o digitados: ");
 	scanf("%d", &numberOfInputs);
 
-	printf("\nSe h· algum valor especÌfico a ser encontrado, digite 1 ou digite 0 caso nenhum valor especÌfico precise ser calculado: ");
-	scanf("%d", &needToFindSpecificNumber);
+	printf("\nSe h√° algum valor espec√≠fico a ser encontrado, digite 1 ou digite 0 caso nenhum valor espec√≠fico precise ser calculado: ");
+	scanf("%d", &needToFindSpecificValue);
 
 	if (needToFindSpecificValue)
 	{
-		printf("\nDigite o valor de X para que o valor da EquaÁ„o de Reta possa ser encontrado: ");
+		printf("\nDigite o valor de X para que o valor da Equa√ß√£o de Reta possa ser encontrado: ");
 		scanf("%lf", &specific_value);
 	}
 
@@ -32,7 +32,7 @@ int main(void)
 	printf("\n---- ENTRADA DE NUMEROS DO EIXO X ----");
 	for (index; index < numberOfInputs; index++)
 	{
-		printf("\n\nDigite o %d∞ numero do eixo X: ", index + 1);
+		printf("\n\nDigite o %d¬∞ numero do eixo X: ", index + 1);
 		scanf("%lf", &inputNumber);
 
 		x_Numbers[index] = inputNumber;
@@ -41,7 +41,7 @@ int main(void)
 	printf("\n---- ENTRADA DE NUMEROS DO EIXO Y ----");
 	for (index = 0; index < numberOfInputs; index++)
 	{
-		printf("\n\nDigite o %d∞ numero do eixo Y: ", index + 1);
+		printf("\n\nDigite o %d¬∞ numero do eixo Y: ", index + 1);
 		scanf("%lf", &inputNumber);
 
 		y_Numbers[index] = inputNumber;
@@ -57,18 +57,18 @@ int main(void)
 
 	printf("\n\n=== SOMATORIA DE X: %.2lf", sumOf_X_Numbers);
 	printf("\n=== SOMATORIA DE Y: %.2lf", sumOf_Y_Numbers);
-	printf("\n=== SOMATORIA DE X≤: %.2lf", sumOf_X_PowNumbers);
-	printf("\n=== SOMATORIA DE Y≤: %.2lf", sumOf_Y_PowNumbers);
+	printf("\n=== SOMATORIA DE X¬≤: %.2lf", sumOf_X_PowNumbers);
+	printf("\n=== SOMATORIA DE Y¬≤: %.2lf", sumOf_Y_PowNumbers);
 	printf("\n=== SOMATORIA DE X x Y: %.2lf", sumOf_XY_Numbers);
 	printf("\n\n=== VALOR DE R: %lf", R_Value);
-	printf("\n=== CLASSIFICA«√O: ");
+	printf("\n=== CLASSIFICA√á√ÉO: ");
 
 	if (R_Value >= 0.6 && R_Value <= 1)
-		printf("CorrelaÁ„o relativamente forte.");
+		printf("Correla√ß√£o relativamente forte.");
 	else if (R_Value >= 0.3 && R_Value < 0.6)
-		printf("CorrelaÁ„o relativamente fraca.");
+		printf("Correla√ß√£o relativamente fraca.");
 	else
-		printf("CorrelaÁ„o relativamente muito fraca.");
+		printf("Correla√ß√£o relativamente muito fraca.");
 
 	printf("\n=== VALOR DE A: %lf", A_Value);
 	printf("\n=== VALOR DE B: %lf", B_Value);
@@ -76,7 +76,7 @@ int main(void)
 	if (needToFindSpecificValue)
 	{
 		double Y_Equation_Value = calculate_Y_Equation_Value(specific_value, A_Value, B_Value);
-		printf("\n=== VALOR DA EQUA«√O DA RETA: %lf\n", Y_Equation_Value);
+		printf("\n=== VALOR DA EQUA√á√ÉO DA RETA: %lf\n", Y_Equation_Value);
 	}
 
 	return 0;
