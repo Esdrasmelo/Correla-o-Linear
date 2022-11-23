@@ -11,8 +11,7 @@ double calculate_Y_Equation_Value(double X_Value, double A_Value, double B_Value
 
 int main(void)
 {
-	int numberOfInputs = 0, index = 0;
-	int needToFindSpecificValue = 0;
+	int numberOfInputs = 0, index = 0, needToFindSpecificValue = 0;
 	double specific_value = 0;
 
 	printf("\nDigite a quantidade de numeros que serão digitados: ");
