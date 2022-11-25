@@ -12,19 +12,19 @@ double calculate_Y_Equation_Value(double X_Value, double A_Value, double B_Value
 int main(void)
 {
 	int numberOfInputs = 0, index = 0;
-	int needToFindSpecificNumber = 0;
-	double specific_number = 0;
+	int needToFindSpecificValue = 0;
+	double specific_value = 0;
 
 	printf("\nDigite a quantidade de numeros que serão digitados: ");
 	scanf("%d", &numberOfInputs);
 
 	printf("\nSe há algum valor específico a ser encontrado, digite 1 ou digite 0 caso nenhum valor específico precise ser calculado: ");
-	scanf("%d", &needToFindSpecificNumber);
+	scanf("%d", &needToFindSpecificValue);
 
-	if (needToFindSpecificNumber)
+	if (needToFindSpecificValue)
 	{
 		printf("\nDigite o valor de X para que o valor da Equação de Reta possa ser encontrado: ");
-		scanf("%lf", &specific_number);
+		scanf("%lf", &specific_value);
 	}
 
 	double inputNumber = 0, y_Numbers[numberOfInputs], x_Numbers[numberOfInputs], sumOf_Y_Numbers = 0, sumOf_X_Numbers = 0, sumOf_X_PowNumbers = 0, sumOf_Y_PowNumbers = 0, sumOf_XY_Numbers = 0;
@@ -73,10 +73,9 @@ int main(void)
 	printf("\n=== VALOR DE A: %lf", A_Value);
 	printf("\n=== VALOR DE B: %lf", B_Value);
 
-	if (needToFindSpecificNumber)
+	if (needToFindSpecificValue)
 	{
-
-		double Y_Equation_Value = calculate_Y_Equation_Value(specific_number, A_Value, B_Value);
+		double Y_Equation_Value = calculate_Y_Equation_Value(specific_value, A_Value, B_Value);
 		printf("\n=== VALOR DA EQUAÇÃO DA RETA: %lf\n", Y_Equation_Value);
 	}
 
